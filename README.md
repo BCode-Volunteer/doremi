@@ -2,10 +2,10 @@
 
 ### Pré-requisitos:
 
--   [PHP 8.1](https://www.php.net/)
--   [Composer](https://getcomposer.org/)
--   [Node.js](https://nodejs.org/en/)
--   [NPM](https://www.npmjs.com/)
+- [PHP 8.1](https://www.php.net/)
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
 
 ### Configuração:
 
