@@ -10,15 +10,12 @@ Route::get('/ping', fn() => 'Hello world!');
 // Route::middleware('')
 //     ->prefix('/v1')
 //     ->group(function () {
-//         Route::controller(ContributionController::class)
-//             ->prefix('/contributions')
-//             ->group(function () {
-//                 Route::get('/', 'index');
-//             });
+//         //Route::controllers...
 //     });
 
 Route::controller(ContributionController::class)
     ->prefix('/v1/contributions')
     ->group(function () {
         Route::get('/', 'index');
+        Route::post('/', 'store');
     });
