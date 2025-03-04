@@ -24,7 +24,7 @@ return new class extends Migration {
                 ->default(ContributionStatusEnum::PENDING);
             $table->timestamps();
 
-            $table->foreign('contributor_id')->references('id')->on('contributors')->onDelete('cascade');
+            $table->foreign('contributor_id')->references('id')->on('contributors')->onDelete('no action');
         });
     }
 
