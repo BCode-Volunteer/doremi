@@ -16,8 +16,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@doremi.com',
-            //TODO: Utilizar criptografia breeze
-            'password' => 'DÓ RÉ MI',
+            'password' => bcrypt('doremi'),
         ]);
     }
 }
