@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\ContributionHistoryService;
 use App\Services\ContributionService;
+use App\Services\IContributionHistoryService;
 use App\Services\IContributionService;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +17,7 @@ class ServiceServiceProvider extends ServiceProvider
     {
         $bindings = [
             IContributionService::class => ContributionService::class,
+            IContributionHistoryService::class => ContributionHistoryService::class,
         ];
 
         foreach ($bindings as $interface => $service) {

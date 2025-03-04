@@ -19,7 +19,7 @@ class ContributionHistoryService implements IContributionHistoryService
     public function createContributionHistory(
         Contribution $contribution,
         float $amount,
-        Carbon $date = null
+        string $date = null
     ): ContributionHistory {
         try {
             DB::beginTransaction();
@@ -37,7 +37,7 @@ class ContributionHistoryService implements IContributionHistoryService
             DB::commit();
 
             return $history;
-        } catch (\Exception) {
+        } catch (\Exception $e) {
             DB::rollBack();
             throw new ContributionException(
                 'Erro interno ao cadastrar histórico de contribuição! Tente novamente mais tarde.'

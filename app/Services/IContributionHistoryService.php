@@ -14,6 +14,6 @@ interface IContributionHistoryService
     public function createContributionHistory(
         Contribution $contribution,
         float $amount,
-        Carbon $date
+        string $date
     ): ContributionHistory;
 }

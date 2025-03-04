@@ -17,5 +17,6 @@ Route::controller(ContributionController::class)
     ->prefix('/v1/contributions')
     ->group(function () {
         Route::get('/', 'index');
+        Route::get('/history', 'indexHistory');
         Route::post('/', 'store');
     });
