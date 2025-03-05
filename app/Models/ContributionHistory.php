@@ -17,4 +17,9 @@ class ContributionHistory extends Model
     {
         return $this->belongsTo(Contribution::class);
     }
+
+    public function contributor(): Contributor
+    {
+        return $this->contribution->contributor;
+    }
 }
