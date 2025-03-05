@@ -8,6 +8,7 @@ use App\Models\Contribution;
 use App\Models\ContributionHistory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 class ContributionHistoryService implements IContributionHistoryService
@@ -48,10 +49,11 @@ class ContributionHistoryService implements IContributionHistoryService
         }
     }
 
-    public function exportContributionHistory(string $format) {
+    public function exportContributionHistory(string $format): Response
+    {
         
         $exportStrategy = ContributionHistoryExportFactory::create($format);
 
-        $exportStrategy->export();
+        return $exportStrategy->export();
     }
 }

@@ -10,11 +10,11 @@ abstract class AbstractExportStrategy
 {
     public function __construct(protected IContributionHistoryService $historyService, protected string $format) {}
 
-    public function export()
+    public function export(): Response
     {
         $this->canExport();
-        
-        $this->generate();
+
+        return $this->generate();
     }
 
     abstract protected function generate();

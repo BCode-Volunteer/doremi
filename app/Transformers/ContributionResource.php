@@ -16,6 +16,7 @@ class ContributionResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'tipo' => $this->type,
             'valor' => $this->value,
             'data_inicio' => $this->start_date,
