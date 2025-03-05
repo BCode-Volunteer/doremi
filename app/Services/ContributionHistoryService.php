@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Exceptions\ContributionException;
+use App\Factories\ContributionHistoryExportFactory;
 use App\Models\Contribution;
 use App\Models\ContributionHistory;
 use Carbon\Carbon;
@@ -11,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 
 class ContributionHistoryService implements IContributionHistoryService
 {
+    public function __construct() {}
+
     public function listContributionHistory(): Collection
     {
         return ContributionHistory::all();
@@ -43,5 +46,12 @@ class ContributionHistoryService implements IContributionHistoryService
                 'Erro interno ao cadastrar histórico de contribuição! Tente novamente mais tarde.'
             );
         }
+    }
+
+    public function exportContributionHistory(string $format) {
+        
+        $exportStrategy = ContributionHistoryExportFactory::create($format);
+
+        $exportStrategy->export();
     }
 }

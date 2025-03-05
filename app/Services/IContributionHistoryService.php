@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\Contribution;
 use App\Models\ContributionHistory;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 
 interface IContributionHistoryService
@@ -16,4 +15,6 @@ interface IContributionHistoryService
         float $amount,
         string $date
     ): ContributionHistory;
+
+    public function exportContributionHistory(string $format);
 }
