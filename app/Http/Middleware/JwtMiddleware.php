@@ -20,7 +20,7 @@ class JwtMiddleware
         try {
             JWTAuth::parseToken()->authenticate();
 
-            return $this->success(message: '');
+            return $next($request);
         } catch (TokenInvalidException $e) {
             return $this->error($e, 'Token inválido!', Response::HTTP_UNAUTHORIZED);
         } catch (TokenExpiredException $e) {
