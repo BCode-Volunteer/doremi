@@ -24,7 +24,7 @@
 3. Gere uma chave para a aplicação
 
 ```bash
-    php artisan key:generate
+    php artisan key:generate && php artisan jwt:secret
 ```
 
 4. Crie o banco de dados
